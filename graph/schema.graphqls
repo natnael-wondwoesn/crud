@@ -3,9 +3,9 @@
 # https://gqlgen.com/getting-started/
 
 type JobListing {
-  _id: ID!,
-  title: String!,
-  description: String!,
+  _id: ID!
+  title: String!
+  description: String!
   company: String!
   url: String!
 
@@ -18,8 +18,8 @@ type Query {
 
 type Mutation {
   createJobListing(input: CreateJobListingInput!): JobListing!
-  updateJobListing(id: ID!, input: UpdateJobListingInput!): JobListing!
-  deleteJobListing(id: ID!), DeleteJobResponse!
+  updateJobListing(id: ID!,input: UpdateJobListingInput!): JobListing!
+  deleteJobListing(id: ID!): DeleteJobResponse!
 
 }
 
