@@ -3,8 +3,10 @@ package database
 import (
 	"context"
 	"fmt"
+	"os"
 	"time"
 
+	"github.com/joho/godotenv"
 	"github.com/natnael-wondwoesn/crud_golang/graph/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -12,7 +14,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var connectionString string = "mongodb+srv://natiwonde:wGr9c9dSnduTTBd@cluster0.aw06t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+var env = godotenv.Load()
+var connectionString string = os.Getenv("MONGODB_URL")
 
 type DB struct {
 	client *mongo.Client
